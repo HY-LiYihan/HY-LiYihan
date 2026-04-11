@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>项目经历 - 李溢涵</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Yihan Li</div>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="cv.html">简历</a>
+      <a href="projects.html" class="active">项目</a>
+      <a href="publications.html">学术成果</a>
+      <a href="https://github.com/HY-LiYihan" target="_blank">GitHub →</a>
+    </div>
+  </nav>
+
+  <main class="page-content">
+    <h1>项目经历</h1>
+    <p class="page-desc">从机器人竞赛到科研项目的动手实践记录。</p>
+
+    <div class="project-list">
+      <div class="project-item">
+        <div class="project-header">
+          <h2>🎯 RoboMaster 视觉系统开发（RMUL）</h2>
+          <span class="status-badge status-active">25赛季副队长 / 26赛季指导 / 算法组负责人</span>
+        </div>
+        <p>负责战队导航与视觉算法方向规划与技术落地，在 NVIDIA Jetson 与 Intel NUC 平台开发高性能感知与控制模块。</p>
+        <ul class="project-details">
+          <li>设计并实现自瞄系统，使用扩展卡尔曼滤波（EKF）预测高速机动目标轨迹，命中率达到 90%+。</li>
+          <li>部署 YOLO 装甲板分类模型，通过 TensorRT 与 OpenVINO 优化，将推理延迟降至 10 ms，满足实时闭环控制。</li>
+          <li>实现视觉主机与 STM32 控制器的稳健通信协议，在高延迟无线环境下保证云台精确同步。</li>
+        </ul>
+        <div class="project-meta">
+          <span>📅 2025.3 - 2025.7</span>
+          <span>🏷️ ROS2 · EKF · YOLO · TensorRT · OpenVINO</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <h2>🚗 复杂场景越野车自主导航与机械臂精准抓取</h2>
+          <span class="status-badge status-active">项目负责人</span>
+        </div>
+        <ul class="project-details">
+          <li>面向四驱差速与阿克曼底盘，优化 FAST_LIO2 解决退化环境建图与回环问题；结合高频里程计与 ICP 实现高效高精重定位。</li>
+          <li>优化基于 TEB 的局部规划器，实现高速高精导航；融合双目点云、YOLOv11 与 PnP 求解，完成 6 自由度机械臂精准抓取。</li>
+        </ul>
+        <div class="project-meta">
+          <span>📅 2025.3 - 2025.7</span>
+          <span>🏷️ FAST_LIO2 · TEB · YOLOv11 · 机械臂</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <h2>🚁 基于 Mesh 组网与 GNSS RTK 的无人机集群飞行</h2>
+          <span class="status-badge status-done">核心成员</span>
+        </div>
+        <ul class="project-details">
+          <li>调试并部署 Mesh 自组网通信模块，建立机间实时数据链路。</li>
+          <li>采集并验证 GNSS RTK 定位数据，完成高精度位置标定，并通过静态/动态飞行结果与基站数据对比分析误差来源。</li>
+          <li>共同制定集群飞行测试方案，支撑多机协同任务（集群起降、轨迹跟踪、动态编队变换）。</li>
+        </ul>
+        <div class="project-meta">
+          <span>📅 2025.7 - 2025.10</span>
+          <span>🏷️ Mesh · GNSS RTK · 集群飞行 · PX4</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <h2>📝 GenreShift：基于计量语言学与 LLM 的智能体裁转换系统</h2>
+          <span class="status-badge status-done">项目负责人</span>
+        </div>
+        <ul class="project-details">
+          <li>负责准平行语料构建、数据爬取与清洗、文体特征提取、LoRA 微调及 MoE 系统搭建。</li>
+          <li>已申请发明专利：一种基于计量语言学与 LLM 的智能体裁转换方法及系统（2025105553019）。</li>
+        </ul>
+        <div class="project-meta">
+          <span>📅 2024.10 - 2025.11</span>
+          <span>🏷️ LLM · LoRA · MoE · 计量语言学</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Yihan Li · 使用 <a href="https://pages.github.com" target="_blank">GitHub Pages</a> 搭建</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简历 - 李溢涵</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Yihan Li</div>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="cv.html" class="active">简历</a>
+      <a href="projects.html">项目</a>
+      <a href="publications.html">学术成果</a>
+      <a href="https://github.com/HY-LiYihan" target="_blank">GitHub →</a>
+    </div>
+  </nav>
+
+  <main class="page-content cv-page">
+    <div class="cv-header">
+      <h1>李溢涵</h1>
+      <div class="cv-contact">
+        <span>📞 +86 18615276438</span>
+        <span>📧 <a href="mailto:liyihan.xyz@gmail.com">liyihan.xyz@gmail.com</a></span>
+        <span>🌐 <a href="https://liyihan.xyz" target="_blank">liyihan.xyz</a></span>
+        <span>💻 <a href="https://github.com/HY-LiYihan" target="_blank">GitHub</a></span>
+      </div>
+    </div>
+
+    <section class="cv-section">
+      <h2>教育背景</h2>
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <h3>中山大学</h3>
+          <span class="cv-date">2023.9 - 2027.6（预计）</span>
+        </div>
+        <p>外国语学院 · 英语专业 · GPA：3.71/4.0</p>
+        <p>计算机学院 · 计算机科学与技术辅修 · GPA：3.85/4.0</p>
+        <div class="cv-tags">
+          <span class="cv-tag">线性代数</span>
+          <span class="cv-tag">微积分</span>
+          <span class="cv-tag">离散数学</span>
+          <span class="cv-tag">数学建模</span>
+          <span class="cv-tag">数据结构与算法</span>
+          <span class="cv-tag">自然语言处理</span>
+          <span class="cv-tag">程序设计</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>科研经历</h2>
+
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <h3>感知融合灵巧手运动控制与抓取（RAPID Hand）</h3>
+          <span class="cv-date">2024.11 - 2025.6</span>
+        </div>
+        <p class="cv-role">科研助理 · Supervisor：Hui Cheng 教授</p>
+        <ul>
+          <li>面向自研 20 自由度仿人灵巧手，开发实时底层运动控制驱动，建立稳定的 1 kHz 控制回路，保障抓取过程中的控制精度与输出力矩表现。</li>
+          <li>负责视触觉融合模块，完成视觉深度信息、指尖压感传感器数据及各关节舵机返回的关节位姿/关节力矩信息的同步与融合，并通过视觉-触觉自动标定将感知链路延迟稳定在 7 ms 以内。</li>
+          <li>搭建高保真 MuJoCo 仿真环境开展 Sim2Real 验证，训练 Diffusion Policy 用于复杂抓取任务并取得 SOTA 水平结果。</li>
+        </ul>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <h3>TopoVisNav：基于动态剪枝的视觉拓扑建图</h3>
+          <span class="cv-date">2024.11 - 至今</span>
+        </div>
+        <p class="cv-role">核心开发者、共同作者 · 合作导师：Hui Cheng 教授</p>
+        <ul>
+          <li>设计 TopoVisNav 粗到细视觉建图框架，融合全局检索（MegaLoc）与局部几何验证（LightGlue），提升地点识别鲁棒性。</li>
+          <li>提出基于 K-Means 聚类的动态参数分析方法，自动确定最优匹配阈值 τ，替代人工调参。</li>
+          <li>实现基于最大生成森林（MSF）的图剪枝策略，在保留拓扑连通性的同时去除冗余边，并通过相对 Ground Truth 的 PRF1 指标完成验证。</li>
+        </ul>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <h3>面向学术语篇的 LLM 自动标注研究</h3>
+          <span class="cv-date">2025.1 - 2025.10</span>
+        </div>
+        <p class="cv-role">科研助理 · 合作导师：郭曼 副教授 · 广东省哲学社会科学规划项目 2025</p>
+        <ul>
+          <li>基于大语言模型（LLM）与 Prompt Engineering 构建自动标注系统，从非结构化文本中抽取语言投射关系。</li>
+          <li>通过迭代微调实现 85% 标注准确率，将复杂学术语篇转换为层级化结构数据，支撑大规模量化分析。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>工作经历</h2>
+
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <h3>中山大学 RoboTech 机器人协会</h3>
+          <span class="cv-date">2023.11 - 至今</span>
+        </div>
+        <p class="cv-role">会长；竞赛队队长</p>
+        <ul>
+          <li>负责协会日常运营与训练体系建设，管理 160+ 人跨学科团队。</li>
+          <li>组织校级"智行空间"无人车技术挑战赛，统筹赛务、规则制定与技术支持，共服务 47 支参赛队伍。</li>
+          <li>统筹 RoboMaster、电赛等国家级赛事备赛，管理项目进度、经费与跨组协作，获得多项国家级奖项。</li>
+        </ul>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <h3>Yun Drone</h3>
+          <span class="cv-date">2025.6 - 2025.10</span>
+        </div>
+        <p class="cv-role">研发实习生</p>
+        <ul>
+          <li>完成科研无人机硬件选型与系统集成，确定飞控、电调及传感器配置方案，优化载荷能力。</li>
+          <li>执行飞行稳定性与机动性测试，基于飞行日志定位控制异常并提出 PID 调参建议。</li>
+          <li>协同结构团队优化机体布局，确保敏感传感器的电磁兼容（EMC）与减振性能。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>荣誉奖项</h2>
+      <div class="awards-grid">
+        <div class="award-item">
+          <span class="award-level gold">🥇 国家一等奖</span>
+          <span>中国机器人及人工智能大赛 · 2025 · 队长</span>
+        </div>
+        <div class="award-item">
+          <span class="award-level gold">🏆 全国总冠军</span>
+          <span>全国智能无人系统应用挑战赛 · 2025 · 队长</span>
+        </div>
+        <div class="award-item">
+          <span class="award-level silver">🥈 国家二等奖</span>
+          <span>全国大学生电子设计竞赛 · 2025 · 队长</span>
+        </div>
+        <div class="award-item">
+          <span class="award-level silver">🥈 国家二等奖</span>
+          <span>RoboMaster 高校联盟赛 · 2025 · 视觉组组长</span>
+        </div>
+        <div class="award-item">
+          <span class="award-level bronze">📜 Honorable Mention</span>
+          <span>美国大学生数学建模竞赛（MCM）· 2024 · 队长</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>专业技能</h2>
+      <div class="skill-group">
+        <div class="skill-category">
+          <h4>编程与开发</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">ROS1/2</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C/C++</span>
+            <span class="skill-tag">MATLAB</span>
+            <span class="skill-tag">STM32/Arduino</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>工程工具</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Fusion 360</span>
+            <span class="skill-tag">SolidWorks</span>
+            <span class="skill-tag">EDA 设计</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>证书</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">AOPA 多旋翼驾驶员</span>
+            <span class="skill-tag">C1 驾照</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>语言</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">中文（母语）</span>
+            <span class="skill-tag">英语（TEM-4）</span>
+            <span class="skill-tag">法语</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cv-download">
+      <a href="Chinese_CV.md" class="btn btn-outline">📄 下载中文简历 (MD)</a>
+      <a href="English_CV.md" class="btn btn-outline">📄 English CV (MD)</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Yihan Li · 使用 <a href="https://pages.github.com" target="_blank">GitHub Pages</a> 搭建</p>
+  </footer>
+</body>
+</html>
