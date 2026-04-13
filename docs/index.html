@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>项目文档</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+      <a href="index.html" class="site-title">
+        <span class="logo">◈</span> Project Docs
+      </a>
+    </div>
+    <div class="header-right">
+      <input type="text" class="header-search" placeholder="搜索文档...  /" id="searchInput">
+      <a href="https://github.com/HY-LiYihan" target="_blank" class="header-link">GitHub ↗</a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <div class="nav-category">快速开始</div>
+      <a href="index.html" class="nav-item active">首页</a>
+      <a href="getting-started.html" class="nav-item">安装与配置</a>
+
+      <div class="nav-category">核心模块</div>
+      <a href="architecture.html" class="nav-item">系统架构</a>
+      <a href="perception.html" class="nav-item">感知模块</a>
+      <a href="navigation.html" class="nav-item">导航模块</a>
+      <a href="control.html" class="nav-item">控制模块</a>
+
+      <div class="nav-category">开发指南</div>
+      <a href="development.html" class="nav-item">开发环境</a>
+      <a href="simulation.html" class="nav-item">仿真调试</a>
+      <a href="deployment.html" class="nav-item">部署上线</a>
+
+      <div class="nav-category">参考</div>
+      <a href="api.html" class="nav-item">API 参考</a>
+      <a href="faq.html" class="nav-item">常见问题</a>
+      <a href="changelog.html" class="nav-item">更新日志</a>
+    </nav>
+
+    <!-- Main + TOC -->
+    <div class="main-wrap">
+      <main class="main-content">
+        <div class="page-header">
+          <div class="page-breadcrumb">首页</div>
+          <h1 class="page-title">项目文档</h1>
+          <p class="page-desc">欢迎来到项目文档站点。这里包含系统的安装、配置、开发与部署的完整说明。</p>
+        </div>
+
+        <h2 id="overview">项目概述</h2>
+        <p>本项目是一个面向复杂场景的自主导航与操作系统，融合视觉感知、路径规划与运动控制，支持在室内外环境中进行高精度自主导航与精准操作。</p>
+
+        <div class="callout callout-info">
+          <div class="callout-title">ℹ️ 文档版本</div>
+          当前文档对应 <code>v1.0.0</code> 版本。如需最新开发版内容，请参考 GitHub 上的 <code>dev</code> 分支。
+        </div>
+
+        <h2 id="quick-links">快速导航</h2>
+        <div class="card-grid">
+          <a href="getting-started.html" class="card" style="text-decoration:none">
+            <h3>🚀 安装与配置</h3>
+            <p>从零开始搭建开发环境，安装依赖并运行第一个 demo。</p>
+          </a>
+          <a href="architecture.html" class="card" style="text-decoration:none">
+            <h3>🏗️ 系统架构</h3>
+            <p>了解系统的整体设计、模块划分与数据流。</p>
+          </a>
+          <a href="simulation.html" class="card" style="text-decoration:none">
+            <h3>🎮 仿真调试</h3>
+            <p>在仿真环境中调试算法，无需实体硬件即可验证。</p>
+          </a>
+          <a href="deployment.html" class="card" style="text-decoration:none">
+            <h3>📦 部署上线</h3>
+            <p>将算法部署到实体机器人，完成端到端验证。</p>
+          </a>
+        </div>
+
+        <h2 id="features">核心特性</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>模块</th>
+              <th>功能</th>
+              <th>状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>感知模块</td>
+              <td>3D 目标检测、语义分割、深度估计</td>
+              <td><span class="badge badge-green">已完成</span></td>
+            </tr>
+            <tr>
+              <td>导航模块</td>
+              <td>全局规划、局部避障、重定位</td>
+              <td><span class="badge badge-green">已完成</span></td>
+            </tr>
+            <tr>
+              <td>控制模块</td>
+              <td>底盘控制、机械臂控制、云台同步</td>
+              <td><span class="badge badge-green">已完成</span></td>
+            </tr>
+            <tr>
+              <td>集群协作</td>
+              <td>Mesh 通信、编队控制、任务分配</td>
+              <td><span class="badge badge-yellow">开发中</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="tech-stack">技术栈</h2>
+        <ul>
+          <li><strong>中间件：</strong>ROS2 Humble / Jazzy</li>
+          <li><strong>感知：</strong>YOLOv11 + TensorRT + OpenVINO</li>
+          <li><strong>建图：</strong>FAST_LIO2 + ORB-SLAM3</li>
+          <li><strong>规划：</strong>TEB + Nav2</li>
+          <li><strong>仿真：</strong>Gazebo + Isaac Sim</li>
+          <li><strong>平台：</strong>NVIDIA Jetson Orin / Intel NUC</li>
+        </ul>
+
+        <div class="callout callout-success">
+          <div class="callout-title">✅ 快速开始</div>
+          只需三步即可运行：<br>
+          <code>git clone</code> → <code>docker compose up</code> → <code>ros2 launch ...</code>
+        </div>
+
+        <footer class="site-footer">
+          <span>© 2026 Yihan Li</span>
+          <span><a href="https://github.com/HY-LiYihan" target="_blank">GitHub</a> · 使用 GitHub Pages 搭建</span>
+        </footer>
+      </main>
+
+      <!-- TOC -->
+      <aside class="toc">
+        <div class="toc-title">本页目录</div>
+        <a href="#overview">项目概述</a>
+        <a href="#quick-links">快速导航</a>
+        <a href="#features">核心特性</a>
+        <a href="#tech-stack">技术栈</a>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    // Mobile sidebar toggle
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+    // Close sidebar on content click (mobile)
+    document.querySelector('.main-wrap')?.addEventListener('click', () => {
+      document.getElementById('sidebar').classList.remove('open');
+    });
+    // Back to top visibility
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('backToTop');
+      btn.classList.toggle('visible', window.scrollY > 400);
+    });
+    // TOC active highlight
+    const tocLinks = document.querySelectorAll('.toc a');
+    const headings = [];
+    tocLinks.forEach(link => {
+      const id = link.getAttribute('href')?.slice(1);
+      const el = id && document.getElementById(id);
+      if (el) headings.push({ el, link });
+    });
+    if (headings.length) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(l => l.classList.remove('active'));
+            const match = headings.find(h => h.el === entry.target);
+            if (match) match.link.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-80px 0px -70% 0px' });
+      headings.forEach(h => observer.observe(h.el));
+    }
+    // Keyboard shortcut for search
+    document.addEventListener('keydown', e => {
+      if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        document.getElementById('searchInput').focus();
+      }
+    });
+  </script>
+</body>
+</html>

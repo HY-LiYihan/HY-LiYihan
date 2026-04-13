@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>安装与配置 - 项目文档</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+      <a href="index.html" class="site-title">
+        <span class="logo">◈</span> Project Docs
+      </a>
+    </div>
+    <div class="header-right">
+      <input type="text" class="header-search" placeholder="搜索文档...  /" id="searchInput">
+      <a href="https://github.com/HY-LiYihan" target="_blank" class="header-link">GitHub ↗</a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="sidebar" id="sidebar">
+      <div class="nav-category">快速开始</div>
+      <a href="index.html" class="nav-item">首页</a>
+      <a href="getting-started.html" class="nav-item active">安装与配置</a>
+
+      <div class="nav-category">核心模块</div>
+      <a href="architecture.html" class="nav-item">系统架构</a>
+      <a href="perception.html" class="nav-item">感知模块</a>
+      <a href="navigation.html" class="nav-item">导航模块</a>
+      <a href="control.html" class="nav-item">控制模块</a>
+
+      <div class="nav-category">开发指南</div>
+      <a href="development.html" class="nav-item">开发环境</a>
+      <a href="simulation.html" class="nav-item">仿真调试</a>
+      <a href="deployment.html" class="nav-item">部署上线</a>
+
+      <div class="nav-category">参考</div>
+      <a href="api.html" class="nav-item">API 参考</a>
+      <a href="faq.html" class="nav-item">常见问题</a>
+      <a href="changelog.html" class="nav-item">更新日志</a>
+    </nav>
+
+    <div class="main-wrap">
+      <main class="main-content">
+        <div class="page-header">
+          <div class="page-breadcrumb"><a href="index.html">首页</a> › 安装与配置</div>
+          <h1 class="page-title">安装与配置</h1>
+          <p class="page-desc">从零开始搭建开发环境，安装依赖并运行系统。</p>
+        </div>
+
+        <h2 id="requirements">环境要求</h2>
+        <table>
+          <thead>
+            <tr><th>项目</th><th>要求</th><th>推荐</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>操作系统</td><td>Ubuntu 22.04 / 24.04</td><td>Ubuntu 22.04 LTS</td></tr>
+            <tr><td>ROS 版本</td><td>ROS2 Humble / Jazzy</td><td>Humble Hawksbill</td></tr>
+            <tr><td>Python</td><td>3.10+</td><td>3.10</td></tr>
+            <tr><td>CUDA</td><td>11.8+（GPU 部署时）</td><td>12.2</td></tr>
+            <tr><td>内存</td><td>16 GB</td><td>32 GB</td></tr>
+            <tr><td>GPU</td><td>RTX 3060+（推理时）</td><td>RTX 4070</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout callout-warning">
+          <div class="callout-title">⚠️ 注意</div>
+          如果你使用的是 Jetson 平台，请确保已安装 JetPack 6.0+，并使用对应的 CUDA 版本。
+        </div>
+
+        <h2 id="clone">克隆仓库</h2>
+        <pre><code># 克隆主仓库
+git clone https://github.com/your-org/your-project.git
+cd your-project
+
+# 初始化子模块
+git submodule update --init --recursive</code></pre>
+
+        <h2 id="docker">Docker 安装（推荐）</h2>
+        <p>使用 Docker 是最简单的安装方式，可以避免环境冲突问题。</p>
+
+        <h3 id="docker-build">构建镜像</h3>
+        <pre><code># 构建 ROS2 开发环境镜像
+docker compose build dev
+
+# 构建部署镜像（含 TensorRT）
+docker compose build deploy</code></pre>
+
+        <h3 id="docker-run">启动容器</h3>
+        <pre><code># 启动开发环境
+docker compose up dev
+
+# 在另一个终端进入容器
+docker compose exec dev bash</code></pre>
+
+        <div class="callout callout-info">
+          <div class="callout-title">💡 提示</div>
+          如果你想在容器中使用 GUI 工具（如 RViz2、rqt），请确保主机已配置 X11 转发。详见 <a href="development.html">开发环境</a> 章节。
+        </div>
+
+        <h2 id="manual">手动安装</h2>
+        <p>如果不使用 Docker，也可以手动安装依赖。</p>
+
+        <h3 id="ros2">安装 ROS2</h3>
+        <pre><code># 设置 ROS2 源
+sudo apt update && sudo apt install curl -y
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
+  -o /usr/share/keyrings/ros-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) \
+  signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] \
+  http://packages.ros.org/ros2/ubuntu \
+  $(. /etc/os-release && echo $UBUNTU_CODENAME) main" \
+  | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+# 安装 ROS2 Humble
+sudo apt update
+sudo apt install ros-humble-desktop -y</code></pre>
+
+        <h3 id="deps">安装项目依赖</h3>
+        <pre><code># 安装 Python 依赖
+pip install -r requirements.txt
+
+# 安装 ROS2 工作空间依赖
+cd ros_ws
+rosdep install --from-paths src --ignore-src -r -y</code></pre>
+
+        <h2 id="verify">验证安装</h2>
+        <pre><code># Source 环境
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+
+# 运行自检
+ros2 run your_package self_check</code></pre>
+
+        <p>如果看到以下输出，说明安装成功：</p>
+        <pre><code>[INFO] [self_check]: All modules loaded successfully ✓
+[INFO] [self_check]: Perception module  — OK
+[INFO] [self_check]: Navigation module  — OK
+[INFO] [self_check]: Control module     — OK
+[INFO] [self_check]: System ready.</code></pre>
+
+        <div class="callout callout-danger">
+          <div class="callout-title">❌ 常见问题</div>
+          如果 <code>rosdep</code> 安装失败，请检查网络连接，或尝试设置代理：<br>
+          <code>export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml</code>
+        </div>
+
+        <h2 id="next">下一步</h2>
+        <p>安装完成后，可以继续阅读：</p>
+        <ul>
+          <li><a href="architecture.html">系统架构</a> — 了解模块划分与数据流</li>
+          <li><a href="simulation.html">仿真调试</a> — 在 Gazebo 中运行第一个 demo</li>
+          <li><a href="development.html">开发环境</a> — 配置 IDE 和调试工具</li>
+        </ul>
+
+        <footer class="site-footer">
+          <span>© 2026 Yihan Li</span>
+          <span><a href="https://github.com/HY-LiYihan" target="_blank">GitHub</a></span>
+        </footer>
+      </main>
+
+      <aside class="toc">
+        <div class="toc-title">本页目录</div>
+        <a href="#requirements">环境要求</a>
+        <a href="#clone">克隆仓库</a>
+        <a href="#docker">Docker 安装</a>
+        <a href="#docker-build">构建镜像</a>
+        <a href="#docker-run">启动容器</a>
+        <a href="#manual">手动安装</a>
+        <a href="#ros2">安装 ROS2</a>
+        <a href="#deps">安装依赖</a>
+        <a href="#verify">验证安装</a>
+        <a href="#next">下一步</a>
+      </aside>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
+    document.querySelector('.main-wrap')?.addEventListener('click', () => { document.getElementById('sidebar').classList.remove('open'); });
+    window.addEventListener('scroll', () => { document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400); });
+    const tocLinks = document.querySelectorAll('.toc a');
+    const headings = [];
+    tocLinks.forEach(link => { const id = link.getAttribute('href')?.slice(1); const el = id && document.getElementById(id); if (el) headings.push({ el, link }); });
+    if (headings.length) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) { tocLinks.forEach(l => l.classList.remove('active')); const match = headings.find(h => h.el === entry.target); if (match) match.link.classList.add('active'); } });
+      }, { rootMargin: '-80px 0px -70% 0px' });
+      headings.forEach(h => observer.observe(h.el));
+    }
+    document.addEventListener('keydown', e => { if (e.key === '/' && document.activeElement.tagName !== 'INPUT') { e.preventDefault(); document.getElementById('searchInput').focus(); } });
+  </script>
+</body>
+</html>
