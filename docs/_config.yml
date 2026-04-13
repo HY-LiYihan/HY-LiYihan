@@ -1,7 +1,7 @@
 # Jekyll 配置
 title: Project Docs
 description: 项目文档站点
-baseurl: "/HY-LiYihan"  # GitHub 仓库名，部署后子路径
+baseurl: "/HY-LiYihan"
 url: "https://hy-liyihan.github.io"
 
 # Markdown 解析
@@ -10,7 +10,7 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-# 默认布局：所有 MD/HTML 文件自动套用 default 布局
+# 默认布局
 defaults:
   - scope:
       path: ""
@@ -18,7 +18,7 @@ defaults:
     values:
       layout: "default"
 
-# 插件（GitHub Pages 安全白名单）
+# 插件（GitHub Pages 白名单）
 plugins:
   - jekyll-seo-tag
 
