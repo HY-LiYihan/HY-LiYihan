@@ -1,0 +1,38 @@
+# 侧边栏导航配置
+# 新增页面只需在这里加一条，然后写对应的 .md 文件即可
+
+- category: 快速开始
+  items:
+    - title: 首页
+      url: /
+    - title: 安装与配置
+      url: /getting-started.html
+
+- category: 核心模块
+  items:
+    - title: 系统架构
+      url: /architecture.html
+    - title: 感知模块
+      url: /perception.html
+    - title: 导航模块
+      url: /navigation.html
+    - title: 控制模块
+      url: /control.html
+
+- category: 开发指南
+  items:
+    - title: 开发环境
+      url: /development.html
+    - title: 仿真调试
+      url: /simulation.html
+    - title: 部署上线
+      url: /deployment.html
+
+- category: 参考
+  items:
+    - title: API 参考
+      url: /api.html
+    - title: 常见问题
+      url: /faq.html
+    - title: 更新日志
+      url: /changelog.html

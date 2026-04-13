@@ -1,61 +1,16 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>系统架构 - 项目文档</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+---
+title: 系统架构
+desc: 了解系统的整体设计、模块划分与数据流。
+breadcrumb: "[首页](/) › 核心模块 › 系统架构"
+layout: default
+---
 
-  <header class="site-header">
-    <div style="display:flex;align-items:center;gap:1rem">
-      <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
-      <a href="index.html" class="site-title">
-        <span class="logo">◈</span> Project Docs
-      </a>
-    </div>
-    <div class="header-right">
-      <input type="text" class="header-search" placeholder="搜索文档...  /" id="searchInput">
-      <a href="https://github.com/HY-LiYihan" target="_blank" class="header-link">GitHub ↗</a>
-    </div>
-  </header>
+## 架构概览
 
-  <div class="layout">
-    <nav class="sidebar" id="sidebar">
-      <div class="nav-category">快速开始</div>
-      <a href="index.html" class="nav-item">首页</a>
-      <a href="getting-started.html" class="nav-item">安装与配置</a>
+系统采用经典的 **感知-规划-控制** 三层架构，各模块通过 ROS2 话题（Topic）和服务（Service）进行通信，实现松耦合设计。
 
-      <div class="nav-category">核心模块</div>
-      <a href="architecture.html" class="nav-item active">系统架构</a>
-      <a href="perception.html" class="nav-item">感知模块</a>
-      <a href="navigation.html" class="nav-item">导航模块</a>
-      <a href="control.html" class="nav-item">控制模块</a>
-
-      <div class="nav-category">开发指南</div>
-      <a href="development.html" class="nav-item">开发环境</a>
-      <a href="simulation.html" class="nav-item">仿真调试</a>
-      <a href="deployment.html" class="nav-item">部署上线</a>
-
-      <div class="nav-category">参考</div>
-      <a href="api.html" class="nav-item">API 参考</a>
-      <a href="faq.html" class="nav-item">常见问题</a>
-      <a href="changelog.html" class="nav-item">更新日志</a>
-    </nav>
-
-    <div class="main-wrap">
-      <main class="main-content">
-        <div class="page-header">
-          <div class="page-breadcrumb"><a href="index.html">首页</a> › 核心模块 › 系统架构</div>
-          <h1 class="page-title">系统架构</h1>
-          <p class="page-desc">了解系统的整体设计、模块划分与数据流。</p>
-        </div>
-
-        <h2 id="overview">架构概览</h2>
-        <p>系统采用经典的 <strong>感知-规划-控制</strong> 三层架构，各模块通过 ROS2 话题（Topic）和服务（Service）进行通信，实现松耦合设计。</p>
-
-        <pre><code>┌─────────────────────────────────────────────────┐
+```
+┌─────────────────────────────────────────────────┐
 │                    传感器层                       │
 │  相机 · 激光雷达 · IMU · 编码器 · 压感传感器     │
 └──────────────────┬──────────────────────────────┘
@@ -78,44 +33,45 @@
 ┌──────────────────▼──────────────────────────────┐
 │                  执行器层                         │
 │  电机 · 舵机 · 电调 · 底盘 · 机械臂             │
-└─────────────────────────────────────────────────┘</code></pre>
+└─────────────────────────────────────────────────┘
+```
 
-        <h2 id="modules">核心模块</h2>
+## 核心模块
 
-        <h3 id="perception-arch">感知模块</h3>
-        <p>感知模块负责从传感器原始数据中提取环境语义信息，输出结构化的感知结果供下游模块使用。</p>
-        <table>
-          <thead>
-            <tr><th>节点</th><th>输入</th><th>输出</th><th>频率</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>armor_detector</code></td><td>Image</td><td>ArmorArray</td><td>100 Hz</td></tr>
-            <tr><td><code>depth_estimator</code></td><td>Image</td><td>DepthMap</td><td>30 Hz</td></tr>
-            <tr><td><code>semantic_seg</code></td><td>Image</td><td>SegMap</td><td>30 Hz</td></tr>
-            <tr><td><code>target_tracker</code></td><td>Detection + Depth</td><td>TrackArray</td><td>100 Hz</td></tr>
-          </tbody>
-        </table>
+### 感知模块
 
-        <h3 id="nav-arch">导航模块</h3>
-        <p>导航模块融合建图、定位与规划，输出速度指令给控制模块。</p>
-        <ul>
-          <li><strong>SLAM：</strong>基于 FAST_LIO2 的激光-惯性里程计，支持退化环境检测与回环闭合</li>
-          <li><strong>全局规划：</strong>基于 A* / Dijkstra 的拓扑路径搜索</li>
-          <li><strong>局部规划：</strong>基于 TEB 的时空优化，支持动态避障</li>
-          <li><strong>重定位：</strong>ICP + 语义匹配，实现全局重定位</li>
-        </ul>
+感知模块负责从传感器原始数据中提取环境语义信息，输出结构化的感知结果供下游模块使用。
 
-        <h3 id="control-arch">控制模块</h3>
-        <p>控制模块接收规划的速度指令，输出底层执行器的控制信号。</p>
-        <ul>
-          <li><strong>底盘控制：</strong>差速/阿克曼运动学模型，PID 速度跟踪</li>
-          <li><strong>机械臂控制：</strong>6-DoF 逆运动学求解，MoveIt2 集成</li>
-          <li><strong>云台同步：</strong>EKF 预测 + 前馈补偿，延迟补偿至 &lt;5ms</li>
-        </ul>
+| 节点 | 输入 | 输出 | 频率 |
+|------|------|------|------|
+| `armor_detector` | Image | ArmorArray | 100 Hz |
+| `depth_estimator` | Image | DepthMap | 30 Hz |
+| `semantic_seg` | Image | SegMap | 30 Hz |
+| `target_tracker` | Detection + Depth | TrackArray | 100 Hz |
 
-        <h2 id="data-flow">数据流</h2>
-        <p>所有模块间通过 ROS2 DDS 通信，关键数据流如下：</p>
-        <pre><code># 传感器 → 感知
+### 导航模块
+
+导航模块融合建图、定位与规划，输出速度指令给控制模块。
+
+- **SLAM：** 基于 FAST_LIO2 的激光-惯性里程计，支持退化环境检测与回环闭合
+- **全局规划：** 基于 A* / Dijkstra 的拓扑路径搜索
+- **局部规划：** 基于 TEB 的时空优化，支持动态避障
+- **重定位：** ICP + 语义匹配，实现全局重定位
+
+### 控制模块
+
+控制模块接收规划的速度指令，输出底层执行器的控制信号。
+
+- **底盘控制：** 差速/阿克曼运动学模型，PID 速度跟踪
+- **机械臂控制：** 6-DoF 逆运动学求解，MoveIt2 集成
+- **云台同步：** EKF 预测 + 前馈补偿，延迟补偿至 <5ms
+
+## 数据流
+
+所有模块间通过 ROS2 DDS 通信，关键数据流如下：
+
+```bash
+# 传感器 → 感知
 /camera/image_raw       → armor_detector  → /detection/armor
 /camera/image_raw       → depth_estimator → /perception/depth
 /lidar/points           → slam_node       → /slam/odom
@@ -126,15 +82,15 @@
 
 # 导航 → 控制
 /nav/cmd_vel            → chassis_ctrl    → /cmd/chassis
-/nav/arm_goal           → arm_ctrl        → /cmd/arm</code></pre>
+/nav/arm_goal           → arm_ctrl        → /cmd/arm
+```
 
-        <div class="callout callout-info">
-          <div class="callout-title">💡 设计原则</div>
-          每个模块都是独立的 ROS2 节点，可以单独启动、调试和替换。你可以只运行感知模块来验证检测效果，而不需要启动整个导航栈。
-        </div>
+{% include callout.html type="info" title="💡 设计原则" content="每个模块都是独立的 ROS2 节点，可以单独启动、调试和替换。你可以只运行感知模块来验证检测效果，而不需要启动整个导航栈。" %}
 
-        <h2 id="project-structure">项目结构</h2>
-        <pre><code>your-project/
+## 项目结构
+
+```
+your-project/
 ├── docs/                    ← 项目文档（本站）
 ├── src/
 │   ├── perception/          ← 感知模块
@@ -153,43 +109,5 @@
 ├── config/                  ← 参数配置文件
 ├── launch/                  ← 启动文件
 ├── docker/                  ← Docker 构建文件
-└── README.md</code></pre>
-
-        <footer class="site-footer">
-          <span>© 2026 Yihan Li</span>
-          <span><a href="https://github.com/HY-LiYihan" target="_blank">GitHub</a></span>
-        </footer>
-      </main>
-
-      <aside class="toc">
-        <div class="toc-title">本页目录</div>
-        <a href="#overview">架构概览</a>
-        <a href="#modules">核心模块</a>
-        <a href="#perception-arch">感知模块</a>
-        <a href="#nav-arch">导航模块</a>
-        <a href="#control-arch">控制模块</a>
-        <a href="#data-flow">数据流</a>
-        <a href="#project-structure">项目结构</a>
-      </aside>
-    </div>
-  </div>
-
-  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
-  <script>
-    function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
-    document.querySelector('.main-wrap')?.addEventListener('click', () => { document.getElementById('sidebar').classList.remove('open'); });
-    window.addEventListener('scroll', () => { document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400); });
-    const tocLinks = document.querySelectorAll('.toc a');
-    const headings = [];
-    tocLinks.forEach(link => { const id = link.getAttribute('href')?.slice(1); const el = id && document.getElementById(id); if (el) headings.push({ el, link }); });
-    if (headings.length) {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => { if (entry.isIntersecting) { tocLinks.forEach(l => l.classList.remove('active')); const match = headings.find(h => h.el === entry.target); if (match) match.link.classList.add('active'); } });
-      }, { rootMargin: '-80px 0px -70% 0px' });
-      headings.forEach(h => observer.observe(h.el));
-    }
-    document.addEventListener('keydown', e => { if (e.key === '/' && document.activeElement.tagName !== 'INPUT') { e.preventDefault(); document.getElementById('searchInput').focus(); } });
-  </script>
-</body>
-</html>
+└── README.md
+```
