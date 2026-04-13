@@ -14,21 +14,21 @@ layout: default
 ## 快速导航
 
 <div class="card-grid">
-  <a href="{% link getting-started.md %}" class="card" style="text-decoration:none">
+  <a href="{{ '/getting-started' | relative_url }}" class="card" style="text-decoration:none">
     <h3>🚀 安装与配置</h3>
     <p>从零开始搭建开发环境，安装依赖并运行第一个 demo。</p>
   </a>
-  <a href="{% link architecture.md %}" class="card" style="text-decoration:none">
+  <a href="{{ '/architecture' | relative_url }}" class="card" style="text-decoration:none">
     <h3>🏗️ 系统架构</h3>
     <p>了解系统的整体设计、模块划分与数据流。</p>
   </a>
-  <a href="{{ '/simulation' | relative_url }}" class="card" style="text-decoration:none">
-    <h3>🎮 仿真调试</h3>
-    <p>在仿真环境中调试算法，无需实体硬件即可验证。</p>
+  <a href="{{ '/perception' | relative_url }}" class="card" style="text-decoration:none">
+    <h3>👁️ 感知模块</h3>
+    <p>3D 目标检测、语义分割、深度估计与目标跟踪。</p>
   </a>
-  <a href="{{ '/deployment' | relative_url }}" class="card" style="text-decoration:none">
-    <h3>📦 部署上线</h3>
-    <p>将算法部署到实体机器人，完成端到端验证。</p>
+  <a href="{{ '/faq' | relative_url }}" class="card" style="text-decoration:none">
+    <h3>❓ 常见问题</h3>
+    <p>使用过程中遇到的问题和解决方案。</p>
   </a>
 </div>
 
