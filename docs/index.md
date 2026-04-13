@@ -9,24 +9,24 @@ layout: default
 
 本项目是一个面向复杂场景的自主导航与操作系统，融合视觉感知、路径规划与运动控制，支持在室内外环境中进行高精度自主导航与精准操作。
 
-{% include callout.html type="info" title="ℹ️ 文档版本" content="当前文档对应 `v1.0.0` 版本。如需最新开发版内容，请参考 GitHub 上的 `dev` 分支。" %}
+> ℹ️ **文档版本：** 当前文档对应 `v1.0.0` 版本。如需最新开发版内容，请参考 GitHub 上的 `dev` 分支。
 
 ## 快速导航
 
 <div class="card-grid">
-  <a href="{{ site.baseurl }}/getting-started.html" class="card" style="text-decoration:none">
+  <a href="{% link getting-started.md %}" class="card" style="text-decoration:none">
     <h3>🚀 安装与配置</h3>
     <p>从零开始搭建开发环境，安装依赖并运行第一个 demo。</p>
   </a>
-  <a href="{{ site.baseurl }}/architecture.html" class="card" style="text-decoration:none">
+  <a href="{% link architecture.md %}" class="card" style="text-decoration:none">
     <h3>🏗️ 系统架构</h3>
     <p>了解系统的整体设计、模块划分与数据流。</p>
   </a>
-  <a href="{{ site.baseurl }}/simulation.html" class="card" style="text-decoration:none">
+  <a href="{{ '/simulation' | relative_url }}" class="card" style="text-decoration:none">
     <h3>🎮 仿真调试</h3>
     <p>在仿真环境中调试算法，无需实体硬件即可验证。</p>
   </a>
-  <a href="{{ site.baseurl }}/deployment.html" class="card" style="text-decoration:none">
+  <a href="{{ '/deployment' | relative_url }}" class="card" style="text-decoration:none">
     <h3>📦 部署上线</h3>
     <p>将算法部署到实体机器人，完成端到端验证。</p>
   </a>
@@ -50,4 +50,4 @@ layout: default
 - **仿真：** Gazebo + Isaac Sim
 - **平台：** NVIDIA Jetson Orin / Intel NUC
 
-{% include callout.html type="success" title="✅ 快速开始" content="只需三步即可运行：<br>`git clone` → `docker compose up` → `ros2 launch ...`" %}
+> ✅ **快速开始：** 只需三步即可运行——`git clone` → `docker compose up` → `ros2 launch ...`

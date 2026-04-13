@@ -6,33 +6,33 @@
     - title: 首页
       url: /
     - title: 安装与配置
-      url: /getting-started.html
+      url: /getting-started
 
 - category: 核心模块
   items:
     - title: 系统架构
-      url: /architecture.html
+      url: /architecture
     - title: 感知模块
-      url: /perception.html
+      url: /perception
     - title: 导航模块
-      url: /navigation.html
+      url: /navigation
     - title: 控制模块
-      url: /control.html
+      url: /control
 
 - category: 开发指南
   items:
     - title: 开发环境
-      url: /development.html
+      url: /development
     - title: 仿真调试
-      url: /simulation.html
+      url: /simulation
     - title: 部署上线
-      url: /deployment.html
+      url: /deployment
 
 - category: 参考
   items:
     - title: API 参考
-      url: /api.html
+      url: /api
     - title: 常见问题
-      url: /faq.html
+      url: /faq
     - title: 更新日志
-      url: /changelog.html
+      url: /changelog

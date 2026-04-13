@@ -16,7 +16,7 @@ layout: default
 | 内存 | 16 GB | 32 GB |
 | GPU | RTX 3060+（推理时） | RTX 4070 |
 
-{% include callout.html type="warning" title="⚠️ 注意" content="如果你使用的是 Jetson 平台，请确保已安装 JetPack 6.0+，并使用对应的 CUDA 版本。" %}
+> ⚠️ **注意：** 如果你使用的是 Jetson 平台，请确保已安装 JetPack 6.0+，并使用对应的 CUDA 版本。
 
 ## 克隆仓库
 
@@ -53,7 +53,7 @@ docker compose up dev
 docker compose exec dev bash
 ```
 
-{% include callout.html type="info" title="💡 提示" content="如果你想在使用 GUI 工具（如 RViz2、rqt），请确保主机已配置 X11 转发。详见开发环境章节。" %}
+> 💡 **提示：** 如果你想使用 GUI 工具（如 RViz2、rqt），请确保主机已配置 X11 转发。详见[开发环境](development)章节。
 
 ## 手动安装
 
@@ -109,12 +109,13 @@ ros2 run your_package self_check
 [INFO] [self_check]: System ready.
 ```
 
-{% include callout.html type="danger" title="❌ 常见问题" content="如果 `rosdep` 安装失败，请检查网络连接，或尝试设置代理：<br>`export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml`" %}
+> ❌ **常见问题：** 如果 `rosdep` 安装失败，请检查网络连接，或尝试设置代理：
+> `export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml`
 
 ## 下一步
 
 安装完成后，可以继续阅读：
 
-- [系统架构](/architecture.html) — 了解模块划分与数据流
-- [仿真调试](/simulation.html) — 在 Gazebo 中运行第一个 demo
-- [开发环境](/development.html) — 配置 IDE 和调试工具
+- [系统架构](architecture) — 了解模块划分与数据流
+- [仿真调试](simulation) — 在 Gazebo 中运行第一个 demo
+- [开发环境](development) — 配置 IDE 和调试工具
