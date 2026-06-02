@@ -16,8 +16,8 @@ Undergraduate at SYSU (English + CS), research assistant in autonomous robotics 
 
 | | Paper | Venue |
 |---|---|---|
-| 🔵 | **OmniTrav**: 360° Vision-based Traversability Benchmark | IROS 2026 (submitted) |
-| 🔵 | **Unordered Landmark Visual Navigation** | ECCV 2026 (submitted) |
+| 🔵 | **OmniTrav**: 360° Vision-based Traversability Benchmark | (submitted) |
+| 🔵 | **Unordered Landmark Visual Navigation** | (submitted) |
 | 🟣 | **RAPID Hand**: Dexterous Manipulation Platform for Embodied Intelligence | NeurIPS 2025 |
 
 ### Fun Projects
