@@ -1,0 +1,237 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[letterpaper,margin=0.68in]{geometry}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{fontspec}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{xeCJK}
+
+\setmainfont{Times New Roman}
+\setCJKmainfont{PingFang SC}
+
+\definecolor{accent}{HTML}{1F4E79}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent
+}
+\urlstyle{same}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}
+  {0pt}
+  {}
+  [\titlerule]
+\titlespacing*{\section}{0pt}{9pt}{5pt}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\newcommand{\name}[1]{%
+  \begin{center}
+    {\LARGE\bfseries #1}\par
+  \end{center}
+}
+
+\newcommand{\contactline}{%
+  \begin{center}
+    \href{mailto:liyihan.xyz@gmail.com}{liyihan.xyz@gmail.com}
+    \quad|\quad +86 18615276438
+    \quad|\quad \href{https://liyihan.xyz}{liyihan.xyz}
+    \quad|\quad \href{https://github.com/HY-LiYihan}{github.com/HY-LiYihan}
+  \end{center}
+}
+
+\newcommand{\cventry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}Y r@{}}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4}
+  \end{tabularx}
+}
+
+\newcommand{\projectentry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}Y r@{}}
+    \textbf{#1} & #2 \\
+    \textit{#3} & #4
+  \end{tabularx}
+}
+
+\newcommand{\pubentry}[3]{%
+  \begin{tabularx}{\textwidth}{@{}Y r@{}}
+    \textbf{#1} & #2 \\
+    #3 &
+  \end{tabularx}
+}
+
+\newcommand{\awardentry}[3]{%
+  \begin{tabularx}{\textwidth}{@{}Y r@{}}
+    \textbf{#1} & #3 \\
+    #2 &
+  \end{tabularx}
+}
+
+\newenvironment{cvitems}
+  {\begin{itemize}[leftmargin=1.25em,itemsep=2pt,topsep=3pt,parsep=0pt,partopsep=0pt]}
+  {\end{itemize}}
+
+\begin{document}
+
+\name{李溢涵}
+\contactline
+
+\section*{教育背景}
+
+\cventry{中山大学}{2023年9月 -- 2027年7月（预计）}
+{外国语学院，英语专业文学学士}{主修 GPA：3.8/4.0}
+
+\begin{tabularx}{\textwidth}{@{}Y r@{}}
+  \textit{智能无人系统辅修} & \textit{GPA：4.0/4.0} \\
+  \textit{计算机科学与技术辅修} & \textit{GPA：3.8/4.0}
+\end{tabularx}
+\textit{相关课程：大学计算机基础（95）、数学建模实践（92）、}\\
+\textit{Matlab计算与仿真（90）、数据结构与算法实验（89）、}\\
+\textit{自然语言处理（86）。}
+
+\section*{论文发表}
+
+\pubentry
+{Anticipating Contact for Visuo-Tactile Diffusion Policies}
+{Under Review}
+{Yating Feng, Yuhang Zheng, Lixin Xu, \textbf{Yihan Li}, Jiaju Yin, Renjing Xu}
+
+\pubentry
+{Goldsmith: Gold-Loss-Guided Prompt Training for Agentic Annotation}
+{Under Review}
+{\textbf{Yihan Li}, Hanyi Zhang, Xiaoxi Jiang, Man Guo}
+
+\pubentry
+{Unordered Landmark Visual Navigation}
+{ECCV 2026}
+{Hao Ren, Junzhe Zhu, \textbf{Yihan Li}, Zetong Bi, Le Zheng, Zhi Li, Yiqing Yuan, Zhaoliang Wan, Lu Qi, Hui Cheng}
+
+\pubentry
+{OmniTrav: A Dataset and Benchmark for $360^\circ$ Vision-based Traversability via Foundation Models}
+{IROS 2026}
+{\textbf{Yihan Li}, Hao Ren, Zhenglan Jiang, Junzhe Zhu, Hui Cheng}
+
+\pubentry
+{RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation Platform for Generalist Robot Autonomy}
+{NeurIPS 2025}
+{Zhaoliang Wan, Zetong Bi, Zida Zhou, Hao Ren, Yiming Zeng, \textbf{Yihan Li}, Lu Qi, Xu Yang, Ming-Hsuan Yang, Hui Cheng}
+
+\section*{专业经历}
+
+\cventry{HCL Lab（HKUST(GZ)）}
+{2026年1月 -- 至今}
+{科研助理}{许人镜教授}
+\begin{cvitems}
+  \item 开展触觉传感、视觉模型、VLA 微调、基于 VLA 的在线强化学习，以及面向灵巧操作的 Real2Sim 场景复现研究。
+  \item 探索多模态视触觉策略学习与评估流程，面向真实传感约束下的具身操作任务。
+\end{cvitems}
+
+\cventry{云纵无人机}
+{2025年2月 -- 至今}
+{无人机研发实习生}{}
+\begin{cvitems}
+  \item 参与无人机自主系统研发，覆盖动力系统选型、编队飞行、导航定位与飞行测试流程设计。
+  \item 研究基于强化学习的抗扰控制方法，并通过飞行日志分析与控制参数调优支持系统迭代。
+\end{cvitems}
+
+\cventry{RAPID Lab（SYSU）}
+{2024年11月 -- 2026年3月}
+{科研助理}{成慧教授}
+\begin{cvitems}
+  \item 围绕灵巧操作、多模态感知、视觉导航与可通行性估计开展具身智能研究。
+  \item 支撑 RAPID Hand、OmniTrav 与 ULVN 等研究方向，参与实验验证、感知集成与基准构建。
+\end{cvitems}
+
+\newpage
+
+\section*{领导经历}
+
+\cventry{中山大学 RoboTech 机器人协会}
+{2024年9月 -- 2025年12月}
+{会长；竞赛队队长}{}
+\begin{cvitems}
+  \item 负责机器人训练与竞赛备赛，覆盖机械设计、硬件、嵌入式控制、视觉、导航与算法方向。
+  \item 统筹协会运营、技术指导、跨组协作与新人培养材料建设，服务 160+ 名成员。
+\end{cvitems}
+
+\section*{项目经历}
+
+\projectentry{Venom VNV：ROS 2 统一机器人平台}
+{2025年11月 -- 至今}
+{项目负责人；ROS 2 平台开发}
+{\href{https://venom-algorithm.github.io/Venom_VNV/}{venom-algorithm.github.io/Venom\_VNV}}
+\begin{cvitems}
+  \item 设计基于 ROS 2 Humble 的统一机器人平台，覆盖驱动、感知、定位、规划、任务控制、仿真与接口规范，面向 UGV/UAV/USV 场景。
+  \item 集成 Livox MID360、海康相机、AgileX 底盘/机械臂/PX4 驱动，以及 Point-LIO/Fast-LIO、Nav2 TEB、Ego Planner Swarm、YOLO 检测、自瞄跟踪与航点任务管理。
+\end{cvitems}
+
+\projectentry{RAPID Hand：感知集成灵巧操作平台}
+{2024年11月 -- 2025年6月}
+{科研助理}
+{\href{https://rapid-hand.github.io/}{rapid-hand.github.io}}
+\begin{cvitems}
+  \item 共同开发紧凑型 20 自由度灵巧手本体与高自由度遥操作/数据采集系统，面向接触丰富的全手操作任务。
+  \item 集成硬件级全手感知，同步腕部视觉、指尖触觉与本体感知，将感知链路延迟控制在 7 ms 以内以支撑策略学习。
+\end{cvitems}
+
+\projectentry{OmniTrav：面向 $360^\circ$ 视觉可通行性的基准}
+{2025年6月 -- 2026年3月}
+{第一作者}
+{}
+\begin{cvitems}
+  \item 提出 C2T 流水线并构建 OmniTrav 数据集，包含 4.7k 场景、25 万帧、577 GB 数据，将针孔、鱼眼与全景 RGB 映射为规划可用的 360 度径向可通行距离。
+  \item 设计自动化基础模型标注流程，以及带跨注意力角度投影器的 DINOv3-FPN 基线，用于径向距离与障碍预测。
+\end{cvitems}
+
+\projectentry{GenreShift 与 Rosetta：面向语言学研究的 LLM 系统}
+{2024年10月 -- 至今}
+{项目负责人}
+{\begin{tabular}{@{}r@{}}\href{https://genreshift.cn/}{genreshift.cn}\\\href{https://rosetta-stone.xyz/}{rosetta-stone.xyz}\end{tabular}}
+\begin{cvitems}
+  \item 构建 GenreShift 体裁与学科分析系统，提取 TTR、MTLD、学术词汇与跨体裁差异等计量语言学特征，并支持基于 LoRA/MoE 的体裁转换；已申请发明专利，申请号 2025105553019。
+  \item 开发 Rosetta 智能体标注流水线，包含概念引导、提示优化、基于嵌入的 top-k 检索、LLM judge 路由、审阅反馈与 Prodigy 兼容 JSONL 导出。
+\end{cvitems}
+
+\section*{荣誉奖项}
+
+\awardentry
+{中国机器人及人工智能大赛}
+{国家一等奖（队长）}
+{2025}
+
+\awardentry
+{全国智能无人系统应用挑战赛}
+{全国冠军（队长）}
+{2025}
+
+\awardentry
+{全国大学生电子设计竞赛}
+{国家二等奖（队长）}
+{2025}
+
+\awardentry
+{RoboMaster 高校联盟赛}
+{国家二等奖（视觉组组长）}
+{2025}
+
+\section*{专业技能}
+
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l Y@{}}
+编程与开发： & Python, C/C++, MATLAB, STM32/Arduino; Codex, Claude Code. \\
+机器人与仿真： & ROS1/2, MuJoCo, Isaac Sim, Isaac Lab, Gazebo, PX4. \\
+工程工具： & Fusion 360, SolidWorks, EDA 设计；AOPA 多旋翼视距内驾驶员。 \\
+语言： & 中文（母语）、英语（TEM-4）、法语。
+\end{tabularx}
+
+\end{document}

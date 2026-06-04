@@ -26,7 +26,8 @@ layout: default
       <a href="mailto:liyihan.xyz@gmail.com" class="profile-link">✉ Email</a>
       <a href="https://github.com/HY-LiYihan" class="profile-link" target="_blank">GitHub</a>
       <a href="/publications" class="profile-link">Publications</a>
-      <a href="/assets/cv_en.pdf" class="profile-link">CV (PDF)</a>
+      <a href="/assets/cv_en.pdf" class="profile-link">CV EN</a>
+      <a href="/assets/cv_zh.pdf" class="profile-link">CV 中文</a>
     </div>
   </div>
 </div>
