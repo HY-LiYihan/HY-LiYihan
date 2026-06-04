@@ -1,161 +1,202 @@
 \documentclass[10pt,letterpaper]{article}
 
+\usepackage[letterpaper,margin=0.68in]{geometry}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+\definecolor{accent}{HTML}{1F4E79}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent
+}
+\urlstyle{same}
+
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\setlength{\oddsidemargin}{-0.35in}
-\setlength{\evensidemargin}{-0.35in}
-\setlength{\textwidth}{7.2in}
-\setlength{\topmargin}{-0.68in}
-\setlength{\textheight}{10.35in}
-\setlength{\emergencystretch}{2em}
 
-\newcommand{\cvsection}[1]{%
-  \vspace{8pt}
-  {\large\bfseries #1}\par
-  \hrule
-  \vspace{4pt}
+\titleformat{\section}
+  {\large\bfseries\scshape\color{accent}}
+  {}
+  {0pt}
+  {}
+  [\titlerule]
+\titlespacing*{\section}{0pt}{9pt}{5pt}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\newcommand{\name}[1]{%
+  \begin{center}
+    {\LARGE\bfseries #1}\par
+  \end{center}
 }
-\newcommand{\entry}[4]{%
-  \textbf{#1}\hfill #2\par
-  \textit{#3}\hfill \textit{#4}\par
+
+\newcommand{\contactline}{%
+  \begin{center}
+    \href{mailto:liyihan.xyz@gmail.com}{liyihan.xyz@gmail.com}
+    \quad|\quad +86 18615276438
+    \quad|\quad \href{https://liyihan.xyz}{liyihan.xyz}
+    \quad|\quad \href{https://github.com/HY-LiYihan}{github.com/HY-LiYihan}
+  \end{center}
 }
+
+\newcommand{\cventry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}Y r@{}}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4}
+  \end{tabularx}
+}
+
 \newcommand{\projectentry}[3]{%
-  \textbf{#1}\hfill #2\par
-  \textit{#3}\par
+  \begin{tabularx}{\textwidth}{@{}Y r@{}}
+    \textbf{#1} & #2 \\
+    \textit{#3} &
+  \end{tabularx}
 }
+
 \newcommand{\pubentry}[3]{%
-  \begin{tabular*}{\textwidth}{@{}p{5.9in}@{\extracolsep{\fill}}r@{}}
-    \textbf{#1} & #2
-  \end{tabular*}\par
-  \textit{#3}\par
-  \vspace{2pt}
+  \begin{tabularx}{\textwidth}{@{}Y r@{}}
+    \textbf{#1} & #2 \\
+    #3 &
+  \end{tabularx}
 }
+
+\newenvironment{cvitems}
+  {\begin{itemize}[leftmargin=1.25em,itemsep=2pt,topsep=3pt,parsep=0pt,partopsep=0pt]}
+  {\end{itemize}}
 
 \begin{document}
 
-\begin{center}
-  {\Large \textbf{Yihan Li}}\par
-  liyihan.xyz@gmail.com
-  \quad|\quad +86 18615276438
-  \quad|\quad liyihan.xyz
-  \quad|\quad github.com/HY-LiYihan
-\end{center}
+\name{Yihan Li}
+\contactline
 
-\cvsection{Education}
+\section*{Education}
 
-\entry{Sun Yat-sen University}{Sep 2023 -- Jul 2027 (Expected)}
-{B.A. in English Language \& Literature, School of Foreign Languages}{GPA: 3.71/4.0}
+\cventry{Sun Yat-sen University}{Sep 2023 -- Jul 2027 (Expected)}
+{B.A. in English Language \& Literature, School of Foreign Languages}{Major GPA: 3.8/4.0}
 
-\textit{Minor in Computer Science \& Technology, School of Computer Science and Engineering}\hfill
-\textit{GPA: 3.85/4.0}
+\begin{tabularx}{\textwidth}{@{}Y r@{}}
+  \textit{Minor in Intelligent Unmanned Systems} & \textit{GPA: 4.0/4.0} \\
+  \textit{Minor in Computer Science \& Technology} & \textit{GPA: 3.8/4.0}
+\end{tabularx}
 
-\cvsection{Publications}
+\section*{Publications}
 
 \pubentry
 {Anticipating Contact for Visuo-Tactile Diffusion Policies}
 {under review}
-{Third or subsequent author}
+{Yating Feng, Yuhang Zheng, Lixin Xu, \textbf{Yihan Li}, Jiaju Yin, Renjing Xu}
 
 \pubentry
 {Goldsmith: Gold-Loss-Guided Prompt Training for Agentic Annotation}
 {under review}
-{First author}
+{\textbf{Yihan Li}, Hanyi Zhang, Xiaoxi Jiang, Man Guo}
 
 \pubentry
 {Unordered Landmark Visual Navigation}
 {under review}
-{Third or subsequent author}
+{Hao Ren, Junzhe Zhu, \textbf{Yihan Li}, Zetong Bi, Le Zheng, Zhi Li, Yiqing Yuan, Zhaoliang Wan, Lu Qi, Hui Cheng}
 
 \pubentry
 {OmniTrav: A Dataset and Benchmark for $360^\circ$ Vision-based Traversability via Foundation Models}
 {under review}
-{First author}
+{\textbf{Yihan Li}, Hao Ren, Zhenglan Jiang, Junzhe Zhu, Hui Cheng}
 
 \pubentry
-{RAPID Hand: Robust, Affordable, Perception-Integrated, Dexterous Manipulation Platform for Embodied Intelligence}
+{RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation Platform for Generalist Robot Autonomy}
 {NeurIPS 2025}
-{Third or subsequent author}
+{Zhaoliang Wan, Zetong Bi, Zida Zhou, Hao Ren, Yiming Zeng, \textbf{Yihan Li}, Lu Qi, Xu Yang, Ming-Hsuan Yang, Hui Cheng}
 
-\cvsection{Work Experience}
+\section*{Work Experience}
 
-\entry{HCL Lab (HKUST(GZ))}
+\cventry{HCL Lab (HKUST(GZ))}
 {Jan 2026 -- Present}
-{Research Assistant}{}
-\begin{itemize}
-  \item Researching dexterous-hand RL, Real-to-Sim pipelines, VLA models, and visuo-tactile policy learning.
-\end{itemize}
+{Research Assistant}{Prof. Renjing Xu}
+\begin{cvitems}
+  \item Conducting dexterous-hand reinforcement learning research, with emphasis on Real-to-Sim transfer pipelines for reproducible policy training and evaluation.
+  \item Developing and validating VLA-style multimodal manipulation methods for visuo-tactile dexterous tasks.
+\end{cvitems}
 
-\entry{Yun Drone}
+\cventry{Yun Drone}
 {Jun 2025 -- Mar 2026}
 {UAV Development Intern}{}
-\begin{itemize}
-  \item Handled UAV propulsion selection, formation-flight development, RL-based disturbance control, navigation/localization, and flight-test log analysis.
-\end{itemize}
+\begin{cvitems}
+  \item Selected UAV propulsion components and participated in formation-flight development, navigation and localization, and flight-test workflow design.
+  \item Explored RL-based disturbance-resilient control and analyzed flight logs to support anti-disturbance tuning and system iteration.
+\end{cvitems}
 
-\entry{RAPID Lab (SYSU)}
+\cventry{RAPID Lab (SYSU)}
 {Nov 2024 -- Jun 2025}
 {Research Assistant}{Prof. Hui Cheng}
-\begin{itemize}
-  \item Built dexterous-hand control, visuo-tactile alignment, MuJoCo Sim2Real validation, visual obstacle avoidance, and topological planning models.
-\end{itemize}
+\begin{cvitems}
+  \item Developed the dexterous-hand control stack, visuo-tactile temporal alignment, and MuJoCo Sim2Real validation workflow for manipulation experiments.
+  \item Built visual obstacle-avoidance and topological-map planning models, connecting perception outputs with embodied navigation tasks.
+\end{cvitems}
 
-\entry{RoboTech Association (SYSU)}
+\cventry{RoboTech Association (SYSU)}
 {Sep 2024 -- Present}
 {President; Competition Team Captain}{}
-\begin{itemize}
-  \item Led 160+ members, daily training, competition teams, and robotics tutorials across mechanical, hardware, control, and algorithms.
-\end{itemize}
+\begin{cvitems}
+  \item Led 160+ members and competition teams, coordinating training schedules, technical reviews, and cross-group collaboration.
+  \item Authored robotics onboarding tutorials across mechanical design, hardware, embedded control, and algorithms.
+\end{cvitems}
 
-\cvsection{Projects}
+\newpage
+
+\section*{Projects}
 
 \projectentry{RoboMaster Visual System Development (RMUL)}
 {Mar 2025 -- Jul 2025}
 {Vice Captain; Team Advisor; Algorithm Group Leader for Navigation and Vision}
-\begin{itemize}
+\begin{cvitems}
   \item Built Jetson/NUC vision with EKF auto-aiming (90\%+ hit rate) and TensorRT/OpenVINO YOLO inference at 10 ms.
   \item Led navigation and vision algorithm planning, STM32 communication, and closed-loop deployment for competitive robotics.
-\end{itemize}
-
-\newpage
+\end{cvitems}
 
 \projectentry{RAPID Hand: Perception-Integrated Dexterous Manipulation Platform}
 {Nov 2024 -- Jun 2025}
 {Research Assistant}
-\begin{itemize}
+\begin{cvitems}
   \item Implemented drivers, visuo-tactile fusion, MuJoCo Sim2Real training, and Diffusion Policy tasks with 50/50 success.
   \item Integrated 1 kHz hand control, wrist vision, fingertip tactile sensing, and joint proprioception under 7 ms synchronization latency.
-\end{itemize}
+\end{cvitems}
 
 \projectentry{OmniTrav: $360^\circ$ Vision-based Traversability Benchmark}
 {Jun 2025 -- Mar 2026}
 {First Author}
-\begin{itemize}
+\begin{cvitems}
   \item Proposed C2T RGB traversability and built a 4.7k-scene, 250k-frame, 577 GB automated foundation-model dataset.
   \item Evaluated pinhole, fisheye, and panoramic cameras; achieved panoramic obstacle detection F1 of 1.0 and pinhole median error of 0.27 m.
-\end{itemize}
+\end{cvitems}
 
 \projectentry{GenreShift and Rosetta: LLM Systems for Linguistic Research}
 {Oct 2024 -- Nov 2025}
 {Project Leader}
-\begin{itemize}
+\begin{cvitems}
   \item Built GenreShift (corpus, LoRA, MoE, patent No. 2025105553019) and Rosetta (Streamlit/Docker annotation with Kimi/DeepSeek APIs).
   \item Supported interactive concept management, data import/export, and LLM-assisted academic discourse annotation.
-\end{itemize}
+\end{cvitems}
 
-\cvsection{Awards}
+\section*{Awards}
 
-\begin{itemize}
+\begin{cvitems}
   \item First Prize, National Level, China Robot and Artificial Intelligence Competition, 2025-08.
   \item Second Prize, National Level, National Undergraduate Electronics Design Contest, 2025-08.
   \item Second Prize, National Level, National Undergraduate Robotics Competition (RoboMaster / RoboCon), 2025.
   \item First Prize, National Level, National Intelligent Unmanned Systems Application Challenge, 2025-07.
-\end{itemize}
+\end{cvitems}
 
-\cvsection{Skills}
+\section*{Skills}
 
-\textbf{Programming:} ROS1/2, Python, C/C++, MATLAB, STM32/Arduino.\\
-\textbf{Robotics/ML:} Visual navigation, 3D perception, dexterous manipulation, MuJoCo, TensorRT, OpenVINO, LLM annotation systems.\\
-\textbf{Engineering and Languages:} Fusion 360, SolidWorks, EDA design; AOPA Multi-rotor VLOS Pilot; Mandarin (native), English (TEM-4), French.
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l Y@{}}
+Programming: & ROS1/2, Python, C/C++, MATLAB, STM32/Arduino. \\
+Robotics/ML: & Visual navigation, 3D perception, dexterous manipulation, MuJoCo, TensorRT, OpenVINO, LLM annotation systems. \\
+Engineering and Languages: & Fusion 360, SolidWorks, EDA design; AOPA Multi-rotor VLOS Pilot; Mandarin (native), English (TEM-4), French.
+\end{tabularx}
 
 \end{document}
