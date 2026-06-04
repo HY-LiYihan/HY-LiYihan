@@ -5,6 +5,25 @@ node_modules/
 out/
 build/
 dist/
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# LaTeX / Tectonic intermediates
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+cv/**/main.pdf
 
 # OS files
 .DS_Store

@@ -132,3 +132,4 @@ Oct 2024 - Nov 2025
 - Licenses: AOPA Multi-rotor VLOS Pilot, C1 Driver's License
 - Languages: Mandarin (Native), English (TEM-4), French
 - Interests: Badminton, Soccer, Cycling, FPV drones
+

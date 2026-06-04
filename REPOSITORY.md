@@ -106,7 +106,16 @@ LaTeX 源文件是主要维护对象。PDF 只有在需要被网站下载、发�
 .
 ├── README.md                 # GitHub 个人首页，不用于仓库说明
 ├── REPOSITORY.md             # 当前文件，记录仓库定位和维护约定
+├── cv/                       # CV 源文件、LaTeX 版本和稳定导出的 PDF
+│   ├── README.md
+│   ├── source/
+│   │   ├── Chinese_CV.md
+│   │   └── English_CV.md
+│   └── academic/en/
+│       ├── main.tex
+│       └── Yihan_Li_Academic_CV_EN.pdf
 ├── docs/                     # GitHub Pages / Jekyll 网站源码
+│   ├── assets/cv_en.pdf
 │   ├── _config.yml
 │   ├── _data/navigation.yml
 │   ├── _layouts/default.html
@@ -118,7 +127,7 @@ LaTeX 源文件是主要维护对象。PDF 只有在需要被网站下载、发�
 └── .github/workflows/        # GitHub Pages 自动部署 workflow
 ```
 
-当前仓库根目录中还存在一些 CV、论文 PDF 和图片类资产。后续建议逐步整理到更稳定的目录中，例如：
+当前 CV 源文件已经从仓库根目录整理到 `cv/source/`，LaTeX 英文 CV 放在 `cv/academic/en/`，网站可下载版本放在 `docs/assets/cv_en.pdf`。如果后续还有论文 PDF、图片或临时文件，建议继续整理到更稳定的目录中，例如：
 
 - `cv/`：LaTeX CV 源文件和稳定导出的 PDF。
 - `docs/assets/`：个人网站需要公开引用的图片、PDF 和其他静态资源。
@@ -136,9 +145,8 @@ LaTeX 源文件是主要维护对象。PDF 只有在需要被网站下载、发�
 
 ## 建议下一步
 
-1. 新建 `cv/` 目录，放置 LaTeX 格式的 CV 源文件。
-2. 将现有 Markdown CV 逐步迁移或重写为 LaTeX 版本。
-3. 在 `docs/assets/` 中放置网站需要引用的正式 CV PDF。
-4. 更新网站中的 CV 链接，使其指向稳定的 PDF 路径。
-5. 将根目录中的论文 PDF、图片和临时文件整理到专门目录。
-6. 保持顶层 `README.md` 精炼，用作 GitHub 账号首页。
+1. 继续维护 `cv/academic/en/main.tex` 作为英文 academic CV 的主源文件。
+2. 如需中文、工业版或短版 CV，可在 `cv/academic/zh/`、`cv/industry/`、`cv/short/` 下新增版本。
+3. 将网站需要引用的公开资产统一放在 `docs/assets/`。
+4. 将论文 PDF、图片和临时文件整理到专门目录，避免堆在仓库根目录。
+5. 保持顶层 `README.md` 精炼，用作 GitHub 账号首页。
