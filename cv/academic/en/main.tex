@@ -52,10 +52,10 @@
   \end{tabularx}
 }
 
-\newcommand{\projectentry}[3]{%
+\newcommand{\projectentry}[4]{%
   \begin{tabularx}{\textwidth}{@{}Y r@{}}
     \textbf{#1} & #2 \\
-    \textit{#3} &
+    \textit{#3} & #4
   \end{tabularx}
 }
 
@@ -160,6 +160,7 @@
 \projectentry{Venom VNV: ROS 2 Unified Robotics Platform}
 {Mar 2025 -- Jul 2025}
 {Project Lead; ROS 2 Platform Developer}
+{\href{https://venom-algorithm.github.io/Venom_VNV/}{venom-algorithm.github.io/Venom\_VNV}}
 \begin{cvitems}
   \item Architected a ROS 2 Humble platform spanning drivers, perception, localization, planning, mission control, simulation, and interface specifications for UGV/UAV/USV scenarios.
   \item Integrated Livox MID360, Hikvision cameras, AgileX chassis/arm/PX4 drivers with Point-LIO/Fast-LIO, Nav2 TEB, Ego Planner Swarm, YOLO detection, auto-aim tracking, and waypoint task management.
@@ -168,6 +169,7 @@
 \projectentry{RAPID Hand: Perception-Integrated Dexterous Manipulation Platform}
 {Nov 2024 -- Jun 2025}
 {Research Assistant}
+{\href{https://rapid-hand.github.io/}{rapid-hand.github.io}}
 \begin{cvitems}
   \item Co-developed a compact 20-DoF dexterous hand ontology and high-DoF teleoperation/data-collection stack for contact-rich whole-hand manipulation.
   \item Integrated hardware-level whole-hand perception, synchronizing wrist vision, fingertip tactile sensing, and proprioception with sub-7 ms latency for policy learning.
@@ -176,6 +178,7 @@
 \projectentry{OmniTrav: $360^\circ$ Vision-based Traversability Benchmark}
 {Jun 2025 -- Mar 2026}
 {First Author}
+{}
 \begin{cvitems}
   \item Proposed the C2T pipeline and built OmniTrav, a 4.7k-scene, 250k-frame, 577 GB dataset mapping pinhole, fisheye, and panoramic RGB to planner-ready 360-degree radial clearance.
   \item Designed an automated foundation-model annotation pipeline and a DINOv3-FPN baseline with a cross-attention angle projector for radial distance and obstacle prediction.
@@ -184,6 +187,7 @@
 \projectentry{GenreShift and Rosetta: LLM Systems for Linguistic Research}
 {Oct 2024 -- Nov 2025}
 {Project Leader}
+{\begin{tabular}{@{}r@{}}\href{https://genreshift.cn/}{genreshift.cn}\\\href{https://rosetta-stone.xyz/}{rosetta-stone.xyz}\end{tabular}}
 \begin{cvitems}
   \item Built GenreShift for genre and discipline analysis, extracting quantitative linguistic features such as TTR, MTLD, academic vocabulary, and cross-genre comparisons for LoRA/MoE-based genre transformation.
   \item Developed Rosetta as an agentic annotation pipeline with concept bootstrap, prompt optimization, embedding-based top-k retrieval, LLM judge routing, review feedback, and Prodigy-compatible JSONL export.
