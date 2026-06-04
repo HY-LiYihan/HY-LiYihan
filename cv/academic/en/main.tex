@@ -66,6 +66,13 @@
   \end{tabularx}
 }
 
+\newcommand{\awardentry}[3]{%
+  \begin{tabularx}{\textwidth}{@{}Y r@{}}
+    \textbf{#1} & #3 \\
+    #2 &
+  \end{tabularx}
+}
+
 \newenvironment{cvitems}
   {\begin{itemize}[leftmargin=1.25em,itemsep=2pt,topsep=3pt,parsep=0pt,partopsep=0pt]}
   {\end{itemize}}
@@ -184,12 +191,25 @@
 
 \section*{Awards}
 
-\begin{cvitems}
-  \item First Prize, National Level, China Robot and Artificial Intelligence Competition, 2025-08.
-  \item Second Prize, National Level, National Undergraduate Electronics Design Contest, 2025-08.
-  \item Second Prize, National Level, National Undergraduate Robotics Competition (RoboMaster / RoboCon), 2025.
-  \item First Prize, National Level, National Intelligent Unmanned Systems Application Challenge, 2025-07.
-\end{cvitems}
+\awardentry
+{National First Prize (Team Captain)}
+{China Robot and Artificial Intelligence Competition}
+{2025}
+
+\awardentry
+{Overall National Champion (Team Captain)}
+{National Intelligent Unmanned Systems Application Challenge}
+{2025}
+
+\awardentry
+{National Second Prize (Team Captain)}
+{National Undergraduate Electronics Design Contest}
+{2025}
+
+\awardentry
+{National Second Prize (Vision Group Leader)}
+{RoboMaster University League}
+{2025}
 
 \section*{Skills}
 
