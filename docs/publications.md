@@ -14,7 +14,7 @@ layout: default
     <div class="pub-body">
       <div class="pub-title">OmniTrav: A Dataset and Benchmark for 360° Vision-based Traversability via Foundation Models</div>
       <div class="pub-authors"><strong>Yihan Li</strong>, Hao Ren, Zhenglan Jiang, Junzhe Zhu, Hui Cheng*</div>
-      <span class="pub-venue venue-iros">IROS 2026</span>
+      <span class="pub-venue venue-iros">RA-L</span>
       <span class="pub-venue venue-submitted">Under Review</span>
       <div class="pub-links">
         <a href="#" class="pub-link">Paper</a>

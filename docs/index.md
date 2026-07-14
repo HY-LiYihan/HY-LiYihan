@@ -38,8 +38,8 @@ layout: default
   <li>
     <span class="news-date">Apr 2026</span>
     <span>
-      <span class="en">Paper <em>OmniTrav</em> submitted to IROS 2026 — 360° vision-based traversability benchmark (first author).</span>
-      <span class="zh"><em>OmniTrav</em> 投稿 IROS 2026，360° 视觉可通行性数据集与基准（第一作者）。</span>
+      <span class="en">Paper <em>OmniTrav</em> updated as RA-L — 360° vision-based traversability benchmark (first author).</span>
+      <span class="zh"><em>OmniTrav</em> 更新为 RA-L，360° 视觉可通行性数据集与基准（第一作者）。</span>
     </span>
   </li>
   <li>
