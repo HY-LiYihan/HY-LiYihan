@@ -41,6 +41,7 @@
 
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}p{0.34\textwidth}}
+\newcolumntype{P}{>{\raggedleft\arraybackslash}p{0.13\textwidth}}
 \newcolumntype{S}{>{\bfseries\raggedright\arraybackslash}p{0.13\textwidth}}
 
 \newcommand{\name}[1]{%
@@ -73,14 +74,14 @@
 }
 
 \newcommand{\pubentry}[3]{%
-  \begin{tabularx}{\textwidth}{@{}Y R@{}}
+  \begin{tabularx}{\textwidth}{@{}Y P@{}}
     \textbf{#1} & #2 \\
     #3 &
   \end{tabularx}
 }
 
 \newcommand{\pubentryreview}[4]{%
-  \begin{tabularx}{\textwidth}{@{}Y R@{}}
+  \begin{tabularx}{\textwidth}{@{}Y P@{}}
     \textbf{#1} & #2 \\
     #3 & \textit{#4}
   \end{tabularx}
