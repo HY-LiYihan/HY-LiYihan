@@ -79,6 +79,13 @@
   \end{tabularx}
 }
 
+\newcommand{\pubentryreview}[4]{%
+  \begin{tabularx}{\textwidth}{@{}Y R@{}}
+    \textbf{#1} & #2 \\
+    #3 & \textit{#4}
+  \end{tabularx}
+}
+
 \newcommand{\awardentry}[3]{%
   \begin{tabularx}{\textwidth}{@{}Y R@{}}
     \textbf{#1} & #3 \\
@@ -108,10 +115,17 @@
 
 \section*{论文发表}
 
-\pubentry
+\pubentryreview
 {Anticipating Contact for Visuo-Tactile Diffusion Policies}
-{CoRL 2026 (Under Review)}
+{CoRL 2026}
 {Yating Feng, Yuhang Zheng, Lixin Xu, \textbf{Yihan Li}, Jiaju Yin, Renjing Xu}
+{Under Review}
+
+\pubentryreview
+{OmniTrav: A Dataset and Benchmark for $360^\circ$ Vision-based Traversability via Foundation Models}
+{RA-L}
+{\textbf{Yihan Li}, Hao Ren, Zhenglan Jiang, Junzhe Zhu, Hui Cheng}
+{Under Review}
 
 \pubentry
 {Goldsmith: Gold-Loss-Guided Prompt Training for Agentic Annotation}
@@ -122,11 +136,6 @@
 {Unordered Landmark Visual Navigation}
 {ECCV 2026}
 {Hao Ren, Junzhe Zhu, \textbf{Yihan Li}, Zetong Bi, Le Zheng, Zhi Li, Yiqing Yuan, Zhaoliang Wan, Lu Qi, Hui Cheng}
-
-\pubentry
-{OmniTrav: A Dataset and Benchmark for $360^\circ$ Vision-based Traversability via Foundation Models}
-{RA-L (Under Review)}
-{\textbf{Yihan Li}, Hao Ren, Zhenglan Jiang, Junzhe Zhu, Hui Cheng}
 
 \pubentry
 {RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation Platform for Generalist Robot Autonomy}
