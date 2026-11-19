@@ -16,9 +16,12 @@ Undergraduate at SYSU (English + CS), research assistant in autonomous robotics 
 
 | | Paper | Venue |
 |---|---|---|
-| 🔵 | **OmniTrav**: 360° Vision-based Traversability Benchmark | (submitted) |
-| 🔵 | **Unordered Landmark Visual Navigation** | (submitted) |
-| 🟣 | **RAPID Hand**: Dexterous Manipulation Platform for Embodied Intelligence | NeurIPS 2025 |
+| 🟣 | **Goldsmith**: Gold-Loss-Guided Definition Optimization with an Agentic Annotation Harness — Yihan Li, Hanyi Zhang, Xiaoxi Jiang, Man Guo | EMNLP 2026 (Oral) |
+| 🟣 | **Unordered Landmark Visual Navigation** — Hao Ren, Junzhe Zhu, Yihan Li, Zetong Bi, Le Zheng, Zhi Li, Yiqing Yuan, Zhaoliang Wan, Lu Qi, Hui Cheng | ECCV 2026 (Spotlight) |
+| 🟣 | **RAPID Hand**: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation Platform for Generalist Robot Autonomy — Zhaoliang Wan, Zetong Bi, Zida Zhou, Hao Ren, Yiming Zeng, Yihan Li, Lu Qi, Xu Yang, Ming-Hsuan Yang, Hui Cheng | NeurIPS 2025 |
+| 🔵 | **Agentic RSR**: Real-to-Sim-to-Real through Scene Reconstruction and Execution-Grounded Robot Policies — Yihan Li, Yating Feng, Shengjiu Sun, Jianing Chen, Hao Ren, Bowen Yang, Weisheng Xu, Qiwei Wu, Hui Cheng, Renjing Xu | arXiv:2610.10479 |
+| 🔵 | **OmniTrav**: A Multi-Camera Dataset and Benchmark for Radial Traversability Prediction — Yihan Li, Hao Ren, Zhenglan Jiang, Junzhe Zhu, Hui Cheng | Under Review |
+| 🔵 | **From Touch to Timing**: Learning Interaction Priors for Robotic Manipulation — Yating Feng, Yuhang Zheng, Lixin Xu, Yihan Li, Jiaju Yin, Renjing Xu | Under Review |
 
 ### Fun Projects
 
