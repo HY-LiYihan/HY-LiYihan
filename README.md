@@ -37,3 +37,7 @@ Undergraduate at SYSU (English + CS), research assistant in autonomous robotics 
 ---
 
 📧 liyihan.xyz@gmail.com · 🌐 [hy-liyihan.github.io](https://hy-liyihan.github.io)
+
+## Agent
+
+This profile is maintained with the help of an AI agent.
